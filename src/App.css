@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 
@@ -47,3 +48,22 @@ button:hover {
   transform: rotate(180deg);
 }
 
+.menu {
+  background-color: white;
+  height: 5vh;
+  display: flex;
+  text-decoration: none;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+.navbar {
+  display: flex;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 10px;
+}
