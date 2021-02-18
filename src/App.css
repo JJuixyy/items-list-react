@@ -1,8 +1,6 @@
 .App {
   text-align: center;
-
 }
-
 
 main {
   text-align: center;
@@ -12,11 +10,10 @@ main {
 }
 
 .container_content {
-
   border: 2px solid black;
   width: 20vw;
   margin: auto;
-  margin-top: 2px;
+  margin-top: 10px;
   box-shadow: 5px 5px 10px black;
 }
 h2 {
@@ -50,13 +47,12 @@ button:hover {
 
 .menu {
   background-color: white;
-  height: 5vh;
+  height: 8vh;
   display: flex;
   text-decoration: none;
-  justify-content: flex-start;
   align-items: center;
-  
 }
+
 .navbar {
   display: flex;
   list-style: none;
@@ -64,6 +60,12 @@ button:hover {
 
 a {
   text-decoration: none;
-  font-size: 2rem;
-  margin: 10px;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 900;
+  margin: 50px;
+}
+
+a:hover {
+  color: green;
 }

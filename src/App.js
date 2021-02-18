@@ -8,8 +8,8 @@ function App() {
   const [student, setStudent] = useState(data);
   return (
    <main>
+     <Navbar/>
      <section className="container">
-        <Navbar/>
         <h2>Attendance List for {student.length} students</h2>
         <List student={student}/>
         <div id="list"></div>
