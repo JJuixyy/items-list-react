@@ -56,16 +56,20 @@ button:hover {
 .navbar {
   display: flex;
   list-style: none;
+  font-size: 2rem;
+  
 }
 
-a {
-  text-decoration: none;
-  font-size: 1.5rem;
+li {
+  margin: 20px;
   color: black;
-  font-weight: 900;
-  margin: 50px;
 }
 
-a:hover {
-  color: green;
+.selected {
+  background-color: red;
+  
 }
+
+
+
+

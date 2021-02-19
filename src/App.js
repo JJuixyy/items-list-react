@@ -1,31 +1,44 @@
-import React, { useState } from 'react'
-import data from './data';
-import './App.css';
-import List from './components/List';
-import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Projets from './pages/Projets';
-import Contact from './pages/Contact';
+import React, { Component } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Projets from "./pages/Projets";
+import Contact from "./pages/Contact";
+import { Transition } from 'react-transition-group';
+import {gsap} from 'gsap';
+
+const routes = [
+  {path:"/", name:"Home", Component:Home},
+  {path:"/projets", name:"Projets", Component:Projets},
+  {path:"/contact", name:"Contact", Component:Contact}
+]
 
 function App() {
-  const [student, setStudent] = useState(data);
   return (
     <Router>
       <main>
         <Navbar/>
-        <Switch>
-          <Route path="/" component={Home}>
-            <section className="container">
-              <h2>Attendance List for {student.length} students</h2>
-              <List student={student}/>
-              <div id="list"></div>
-              <button onClick = {() => setStudent([])}>Clear list</button>
-            </section>
-          </Route>
-          <Route path="/projets" component={Projets}/>
-          <Route path="/contact" component={Contact}/>
-        </Switch>
+          <section className="container">
+            <Transition>
+            <Switch>
+                {routes.map(({path, Component})=>(
+                  <Route key={path} exact path={path}>
+                    {({match}) => (
+                      
+                        <>
+                          <Component/>
+                        </>
+                      
+                    )}
+                  </Route>
+                ))}
+                  <Route path="/projets" component={Projets}/>
+                  <Route path="/contact" component={Contact}/>
+                  <Route path="/" exact component={Home}></Route>
+            </Switch>
+            </Transition>
+          </section>
       </main>
     </Router>
   );
